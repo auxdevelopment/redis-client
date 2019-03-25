@@ -1,6 +1,9 @@
 # Overview
 Implementation of a simple client for Redis and demonstration of a distributed lock based on Redlock.
 
+## Disclaimer
+This project was created for a distributed systems class and is therefore *not production-ready*.
+
 ## Components
 ### RESP-Client (resp_client.h)
 Provides an implementation for the RESP-protocol as well as member-functions to facilitate Redis pipeline mechanism and Pub / Sub.
