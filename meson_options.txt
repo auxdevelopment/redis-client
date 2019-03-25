@@ -1,0 +1,4 @@
+option('asio_include_dir', type : 'string', value : '/path/to/asio', description : 'the include dir of asio')
+option('spdlog_include_dir', type : 'string', value : '/path/to/spdlog', description : 'the include dir of spdlog')
+option('clipp_include_dir', type : 'string', value : '/path/to/clipp', description : 'the include dir of clipp')
+option('json_include_dir', type : 'string', value : '/path/to/json', description : 'the include dir of json')
