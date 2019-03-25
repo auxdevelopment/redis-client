@@ -14,6 +14,6 @@ Provides a high-level abstraction for Redis commands and tries to provide an idi
 ## Usage
 ### Establishing a connection
 
-```c++
+```c
   connection client{make_shared<resp_client>(host, port)};
 ```
