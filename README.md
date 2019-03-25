@@ -24,7 +24,7 @@ The `redis_client`-class provides a variety member-functions that allow you to i
 
 ```cpp
   client.set("my-key", "my-value");
-  auto value = client.get("mein_key");
+  auto value = client.get("my-key");
   auto was_set = client.setnx("my-key", "set by SETNX");
 
   // set expiration time
@@ -44,3 +44,14 @@ The `redis_client`-class provides a variety member-functions that allow you to i
   });
 
 ```
+
+#### Working with Pub / Sub
+The `redis_client` also provides a way to deal with subscriptions. To subscribe to a particular channel, simply call the subscribe member-function. 
+```cpp
+  subscriber channel_six_sub = client.subscribe("channel-six", 
+    [&](resp_types::subscription_message message) -> auto {
+      std::cout << "Channel Six Message: " << message.message << std::endl;
+  });
+
+```
+This will internally create a new connection to the Redis instance and return a `subscriber`. This acts like an asynchronous function call. If you need the statement to act as a synchronous call, use the `subscribe_sync` member-function.
